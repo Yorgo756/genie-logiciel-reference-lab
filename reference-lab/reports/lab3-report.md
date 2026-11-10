@@ -60,3 +60,4 @@ removed from services in Lab 4.
 
 - `442514a` - reviewed specification before implementation
 - `a0abf14` - acceptance tests and captured pre-implementation failures
+- `8192839` - verified reservation implementation

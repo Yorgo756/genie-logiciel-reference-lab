@@ -108,4 +108,15 @@ class LibraryHttpIntegrationTest {
                         .content("{\"isbn\":\"\",\"title\":\"\",\"author\":\"\"}"))
                 .andExpect(status().isBadRequest());
     }
+
+    @Test
+    void publishesOpenApiAndSwaggerUi() throws Exception {
+        mockMvc.perform(get("/v3/api-docs"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.info.title").value("Library Management API"))
+                .andExpect(jsonPath("$.paths['/api/books']").exists());
+
+        mockMvc.perform(get("/swagger-ui/index.html"))
+                .andExpect(status().isOk());
+    }
 }

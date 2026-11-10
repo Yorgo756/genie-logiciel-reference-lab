@@ -1,6 +1,10 @@
 package edu.yorgo.library.web;
 
 import edu.yorgo.library.domain.Borrowing;
+import edu.yorgo.library.dto.BorrowBookRequest;
+import edu.yorgo.library.dto.BorrowingResponse;
+import edu.yorgo.library.exception.InvalidRequestException;
+import edu.yorgo.library.mapper.BorrowingMapper;
 import edu.yorgo.library.service.BorrowingService;
 import jakarta.validation.Valid;
 import java.net.URI;
@@ -19,26 +23,28 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberBorrowingController {
 
     private final BorrowingService service;
+    private final BorrowingMapper mapper;
 
-    public MemberBorrowingController(BorrowingService service) {
+    public MemberBorrowingController(BorrowingService service, BorrowingMapper mapper) {
         this.service = service;
+        this.mapper = mapper;
     }
 
     @PostMapping
-    public ResponseEntity<Borrowing> borrow(
+    public ResponseEntity<BorrowingResponse> borrow(
             @PathVariable Long memberId,
             @Valid @RequestBody BorrowBookRequest request) {
         Borrowing created = service.borrowBook(memberId, request.bookId(), request.borrowedOn());
-        return ResponseEntity.created(URI.create("/api/borrowings/" + created.getId())).body(created);
+        return ResponseEntity.created(URI.create("/api/borrowings/" + created.getId())).body(mapper.toResponse(created));
     }
 
     @GetMapping
-    public List<Borrowing> list(
+    public List<BorrowingResponse> list(
             @PathVariable Long memberId,
             @RequestParam(defaultValue = "true") boolean active) {
         if (!active) {
-            throw new IllegalArgumentException("Only active borrowing lists are supported");
+            throw new InvalidRequestException("Only active borrowing lists are supported");
         }
-        return service.findActiveByMember(memberId);
+        return service.findActiveByMember(memberId).stream().map(mapper::toResponse).toList();
     }
 }

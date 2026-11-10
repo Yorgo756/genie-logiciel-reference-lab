@@ -1,6 +1,9 @@
 package edu.yorgo.library.web;
 
 import edu.yorgo.library.domain.Member;
+import edu.yorgo.library.dto.MemberRequest;
+import edu.yorgo.library.dto.MemberResponse;
+import edu.yorgo.library.mapper.MemberMapper;
 import edu.yorgo.library.service.MemberService;
 import jakarta.validation.Valid;
 import java.net.URI;
@@ -20,30 +23,32 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberController {
 
     private final MemberService service;
+    private final MemberMapper mapper;
 
-    public MemberController(MemberService service) {
+    public MemberController(MemberService service, MemberMapper mapper) {
         this.service = service;
+        this.mapper = mapper;
     }
 
     @GetMapping
-    public List<Member> findAll() {
-        return service.findAll();
+    public List<MemberResponse> findAll() {
+        return service.findAll().stream().map(mapper::toResponse).toList();
     }
 
     @GetMapping("/{id}")
-    public Member findById(@PathVariable Long id) {
-        return service.findById(id);
+    public MemberResponse findById(@PathVariable Long id) {
+        return mapper.toResponse(service.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Member> create(@Valid @RequestBody Member member) {
-        Member created = service.create(member);
-        return ResponseEntity.created(URI.create("/api/members/" + created.getId())).body(created);
+    public ResponseEntity<MemberResponse> create(@Valid @RequestBody MemberRequest request) {
+        Member created = service.create(mapper.toEntity(request));
+        return ResponseEntity.created(URI.create("/api/members/" + created.getId())).body(mapper.toResponse(created));
     }
 
     @PutMapping("/{id}")
-    public Member update(@PathVariable Long id, @Valid @RequestBody Member member) {
-        return service.update(id, member);
+    public MemberResponse update(@PathVariable Long id, @Valid @RequestBody MemberRequest request) {
+        return mapper.toResponse(service.update(id, mapper.toEntity(request)));
     }
 
     @DeleteMapping("/{id}")

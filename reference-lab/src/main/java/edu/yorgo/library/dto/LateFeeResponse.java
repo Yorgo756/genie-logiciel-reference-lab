@@ -1,4 +1,4 @@
-package edu.yorgo.library.web;
+package edu.yorgo.library.dto;
 
 import java.math.BigDecimal;
 

@@ -1,16 +1,16 @@
 package edu.yorgo.library.service;
 
 import edu.yorgo.library.domain.Borrowing;
+import edu.yorgo.library.dto.BorrowingRequest;
+import edu.yorgo.library.exception.ConflictException;
+import edu.yorgo.library.exception.ResourceNotFoundException;
 import edu.yorgo.library.repository.BorrowingRepository;
-import edu.yorgo.library.web.BorrowingRequest;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class BorrowingService {
@@ -34,7 +34,7 @@ public class BorrowingService {
 
     public Borrowing findById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Borrowing not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Borrowing not found"));
     }
 
     public Borrowing create(BorrowingRequest request) {
@@ -104,7 +104,7 @@ public class BorrowingService {
         return new LateFee(lateDays, amount);
     }
 
-    private ResponseStatusException conflict(String message) {
-        return new ResponseStatusException(HttpStatus.CONFLICT, message);
+    private ConflictException conflict(String message) {
+        return new ConflictException(message);
     }
 }

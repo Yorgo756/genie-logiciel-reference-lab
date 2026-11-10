@@ -1,6 +1,9 @@
 package edu.yorgo.library.web;
 
 import edu.yorgo.library.domain.Book;
+import edu.yorgo.library.dto.BookRequest;
+import edu.yorgo.library.dto.BookResponse;
+import edu.yorgo.library.mapper.BookMapper;
 import edu.yorgo.library.service.BookService;
 import jakarta.validation.Valid;
 import java.net.URI;
@@ -20,30 +23,32 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     private final BookService service;
+    private final BookMapper mapper;
 
-    public BookController(BookService service) {
+    public BookController(BookService service, BookMapper mapper) {
         this.service = service;
+        this.mapper = mapper;
     }
 
     @GetMapping
-    public List<Book> findAll() {
-        return service.findAll();
+    public List<BookResponse> findAll() {
+        return service.findAll().stream().map(mapper::toResponse).toList();
     }
 
     @GetMapping("/{id}")
-    public Book findById(@PathVariable Long id) {
-        return service.findById(id);
+    public BookResponse findById(@PathVariable Long id) {
+        return mapper.toResponse(service.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Book> create(@Valid @RequestBody Book book) {
-        Book created = service.create(book);
-        return ResponseEntity.created(URI.create("/api/books/" + created.getId())).body(created);
+    public ResponseEntity<BookResponse> create(@Valid @RequestBody BookRequest request) {
+        Book created = service.create(mapper.toEntity(request));
+        return ResponseEntity.created(URI.create("/api/books/" + created.getId())).body(mapper.toResponse(created));
     }
 
     @PutMapping("/{id}")
-    public Book update(@PathVariable Long id, @Valid @RequestBody Book book) {
-        return service.update(id, book);
+    public BookResponse update(@PathVariable Long id, @Valid @RequestBody BookRequest request) {
+        return mapper.toResponse(service.update(id, mapper.toEntity(request)));
     }
 
     @DeleteMapping("/{id}")

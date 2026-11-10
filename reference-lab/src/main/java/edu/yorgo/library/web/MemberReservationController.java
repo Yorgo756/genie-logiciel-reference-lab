@@ -1,6 +1,9 @@
 package edu.yorgo.library.web;
 
 import edu.yorgo.library.domain.Reservation;
+import edu.yorgo.library.dto.ReservationRequest;
+import edu.yorgo.library.dto.ReservationResponse;
+import edu.yorgo.library.mapper.ReservationMapper;
 import edu.yorgo.library.service.ReservationService;
 import jakarta.validation.Valid;
 import java.net.URI;
@@ -19,23 +22,25 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberReservationController {
 
     private final ReservationService service;
+    private final ReservationMapper mapper;
 
-    public MemberReservationController(ReservationService service) {
+    public MemberReservationController(ReservationService service, ReservationMapper mapper) {
         this.service = service;
+        this.mapper = mapper;
     }
 
     @PostMapping
-    public ResponseEntity<Reservation> create(
+    public ResponseEntity<ReservationResponse> create(
             @PathVariable Long memberId,
             @Valid @RequestBody ReservationRequest request) {
         Reservation created = service.create(memberId, request.bookId(), request.reservedOn());
         URI location = URI.create("/api/members/" + memberId + "/reservations/" + created.getId());
-        return ResponseEntity.created(location).body(created);
+        return ResponseEntity.created(location).body(mapper.toResponse(created));
     }
 
     @GetMapping
-    public List<Reservation> list(@PathVariable Long memberId) {
-        return service.findActiveByMember(memberId);
+    public List<ReservationResponse> list(@PathVariable Long memberId) {
+        return service.findActiveByMember(memberId).stream().map(mapper::toResponse).toList();
     }
 
     @DeleteMapping("/{reservationId}")
