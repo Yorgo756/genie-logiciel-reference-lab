@@ -27,3 +27,7 @@ docker run --rm -p 8080:8080 library-api:final
 OpenAPI JSON is published at `/v3/api-docs` and Swagger UI at
 `/swagger-ui/index.html`. The final measured results and live-container HTTP
 checks are recorded in [`reports/final-verification.md`](reports/final-verification.md).
+
+The visually verified Moodle report is stored at
+[`submission/agentic-development-reference-lab.pdf`](submission/agentic-development-reference-lab.pdf).
+Its ReportLab source is retained beside it for reproducibility.
