@@ -12,3 +12,14 @@ that are currently unavailable.
 
 Implementation and actual verification results will be appended after the
 specification commit.
+
+Specification commit: `442514a`.
+
+## Pre-implementation acceptance run
+
+Command: `./mvnw -Dtest=ReservationWorkflowIntegrationTest test`
+
+Actual result: **BUILD FAILURE**. Three tests ran and all three failed with
+expected reservation status codes receiving HTTP 404. Their prerequisite Lab 2
+borrowing calls returned HTTP 201, isolating the failure to the deliberately
+missing reservation routes.
