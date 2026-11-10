@@ -1,0 +1,155 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24439 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] -----------------------< edu.yorgo:library-api >------------------------
+[INFO] Building library-api 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- jacoco:0.8.16:prepare-agent (default) @ library-api ---
+[INFO] argLine set to -javaagent:/Users/yorgo/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=/Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ library-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ library-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 42 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ library-api ---
+[INFO] skip non existing resourceDirectory /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ library-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 8 source files with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ library-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running edu.yorgo.library.web.BorrowingWorkflowIntegrationTest
+18:51:19.776 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [edu.yorgo.library.web.BorrowingWorkflowIntegrationTest]: BorrowingWorkflowIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:51:19.902 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration edu.yorgo.library.LibraryApplication for test class edu.yorgo.library.web.BorrowingWorkflowIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-10T18:51:20.317+02:00  INFO 29454 --- [library-api] [           main] e.y.l.w.BorrowingWorkflowIntegrationTest : Starting BorrowingWorkflowIntegrationTest using Java 22.0.2 with PID 29454 (started by yorgo in /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab)
+2026-11-10T18:51:20.318+02:00  INFO 29454 --- [library-api] [           main] e.y.l.w.BorrowingWorkflowIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2026-11-10T18:51:20.954+02:00  INFO 29454 --- [library-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-10T18:51:21.003+02:00  INFO 29454 --- [library-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 4 JPA repository interfaces.
+2026-11-10T18:51:21.312+02:00  INFO 29454 --- [library-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-10T18:51:21.356+02:00  INFO 29454 --- [library-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-11-10T18:51:21.378+02:00  INFO 29454 --- [library-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-10T18:51:21.594+02:00  INFO 29454 --- [library-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-10T18:51:21.623+02:00  INFO 29454 --- [library-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-10T18:51:21.828+02:00  INFO 29454 --- [library-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library user=SA
+2026-11-10T18:51:21.829+02:00  INFO 29454 --- [library-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-10T18:51:21.890+02:00  INFO 29454 --- [library-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-10T18:51:22.556+02:00  INFO 29454 --- [library-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-10T18:51:22.596+02:00  INFO 29454 --- [library-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-10T18:51:23.215+02:00  INFO 29454 --- [library-api] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:library'
+2026-11-10T18:51:23.249+02:00  INFO 29454 --- [library-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-10T18:51:23.249+02:00  INFO 29454 --- [library-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-10T18:51:23.250+02:00  INFO 29454 --- [library-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-10T18:51:23.270+02:00  INFO 29454 --- [library-api] [           main] e.y.l.w.BorrowingWorkflowIntegrationTest : Started BorrowingWorkflowIntegrationTest in 3.242 seconds (process running for 4.212)
+2026-11-10T18:51:23.577+02:00  WARN 29454 --- [library-api] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-10T18:51:23.578+02:00  WARN 29454 --- [library-api] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/yorgo/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/members/1/borrowings
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"38"]
+             Body = {"bookId":1,"borrowedOn":"2026-11-10"}
+    Session Attrs = {}
+
+Handler:
+             Type = edu.yorgo.library.web.MemberBorrowingController
+           Method = edu.yorgo.library.web.MemberBorrowingController#borrow(Long, BorrowBookRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Location:"/api/borrowings/1", Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":1,"book":{"id":1,"isbn":"9780132350884","title":"Clean Code","author":"Robert C. Martin","available":false},"member":{"id":1,"name":"Alice Martin","email":"alice@example.com","active":true},"borrowedOn":"2026-11-10","dueDate":"2026-11-23","returnedOn":null}
+    Forwarded URL = null
+   Redirected URL = /api/borrowings/1
+          Cookies = []
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.437 s <<< FAILURE! -- in edu.yorgo.library.web.BorrowingWorkflowIntegrationTest
+[ERROR] edu.yorgo.library.web.BorrowingWorkflowIntegrationTest.borrowsForFourteenDaysAndRejectsDuplicateActiveBorrowing -- Time elapsed: 0.469 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.dueDate" expected:<2026-11-24> but was:<2026-11-23>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at edu.yorgo.library.web.BorrowingWorkflowIntegrationTest.borrowsForFourteenDaysAndRejectsDuplicateActiveBorrowing(BorrowingWorkflowIntegrationTest.java:46)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   BorrowingWorkflowIntegrationTest.borrowsForFourteenDaysAndRejectsDuplicateActiveBorrowing:46 JSON path "$.dueDate" expected:<2026-11-24> but was:<2026-11-23>
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.435 s
+[INFO] Finished at: 2026-11-10T18:51:24+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project library-api: There are test failures.
+[ERROR] 
+[ERROR] See /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
