@@ -1,0 +1,177 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24439 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] -----------------------< edu.yorgo:library-api >------------------------
+[INFO] Building library-api 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 64 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ library-api ---
+[INFO] Deleting /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/target
+[INFO] 
+[INFO] --- jacoco:0.8.16:prepare-agent (default) @ library-api ---
+[INFO] argLine set to -javaagent:/Users/yorgo/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=/Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ library-api ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ library-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 42 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ library-api ---
+[INFO] skip non existing resourceDirectory /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ library-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 8 source files with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ library-api ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running edu.yorgo.library.web.LibraryHttpIntegrationTest
+18:54:28.885 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [edu.yorgo.library.web.LibraryHttpIntegrationTest]: LibraryHttpIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:54:28.989 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration edu.yorgo.library.LibraryApplication for test class edu.yorgo.library.web.LibraryHttpIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-10T18:54:29.351+02:00  INFO 29913 --- [library-api] [           main] e.y.l.web.LibraryHttpIntegrationTest     : Starting LibraryHttpIntegrationTest using Java 22.0.2 with PID 29913 (started by yorgo in /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab)
+2026-11-10T18:54:29.352+02:00  INFO 29913 --- [library-api] [           main] e.y.l.web.LibraryHttpIntegrationTest     : No active profile set, falling back to 1 default profile: "default"
+2026-11-10T18:54:29.864+02:00  INFO 29913 --- [library-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-10T18:54:29.904+02:00  INFO 29913 --- [library-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 4 JPA repository interfaces.
+2026-11-10T18:54:30.199+02:00  INFO 29913 --- [library-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-10T18:54:30.245+02:00  INFO 29913 --- [library-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-11-10T18:54:30.268+02:00  INFO 29913 --- [library-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-10T18:54:30.475+02:00  INFO 29913 --- [library-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-10T18:54:30.504+02:00  INFO 29913 --- [library-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-10T18:54:30.719+02:00  INFO 29913 --- [library-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library user=SA
+2026-11-10T18:54:30.721+02:00  INFO 29913 --- [library-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-10T18:54:30.779+02:00  INFO 29913 --- [library-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-10T18:54:31.483+02:00  INFO 29913 --- [library-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-10T18:54:31.527+02:00  INFO 29913 --- [library-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-10T18:54:32.202+02:00  INFO 29913 --- [library-api] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:library'
+2026-11-10T18:54:32.234+02:00  INFO 29913 --- [library-api] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-10T18:54:32.234+02:00  INFO 29913 --- [library-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-10T18:54:32.235+02:00  INFO 29913 --- [library-api] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-10T18:54:32.257+02:00  INFO 29913 --- [library-api] [           main] e.y.l.web.LibraryHttpIntegrationTest     : Started LibraryHttpIntegrationTest in 3.158 seconds (process running for 4.018)
+2026-11-10T18:54:32.562+02:00  WARN 29913 --- [library-api] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-10T18:54:32.562+02:00  WARN 29913 --- [library-api] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/Users/yorgo/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-11-10T18:54:33.136+02:00  INFO 29913 --- [library-api] [           main] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 226 ms
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.588 s -- in edu.yorgo.library.web.LibraryHttpIntegrationTest
+[INFO] Running edu.yorgo.library.web.ErrorWorkflowIntegrationTest
+2026-11-10T18:54:33.340+02:00  INFO 29913 --- [library-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [edu.yorgo.library.web.ErrorWorkflowIntegrationTest]: ErrorWorkflowIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-10T18:54:33.343+02:00  INFO 29913 --- [library-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration edu.yorgo.library.LibraryApplication for test class edu.yorgo.library.web.ErrorWorkflowIntegrationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s -- in edu.yorgo.library.web.ErrorWorkflowIntegrationTest
+[INFO] Running edu.yorgo.library.web.ReservationWorkflowIntegrationTest
+2026-11-10T18:54:33.397+02:00  INFO 29913 --- [library-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [edu.yorgo.library.web.ReservationWorkflowIntegrationTest]: ReservationWorkflowIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-10T18:54:33.398+02:00  INFO 29913 --- [library-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration edu.yorgo.library.LibraryApplication for test class edu.yorgo.library.web.ReservationWorkflowIntegrationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 s -- in edu.yorgo.library.web.ReservationWorkflowIntegrationTest
+[INFO] Running edu.yorgo.library.web.BorrowingWorkflowIntegrationTest
+2026-11-10T18:54:33.486+02:00  INFO 29913 --- [library-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [edu.yorgo.library.web.BorrowingWorkflowIntegrationTest]: BorrowingWorkflowIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-10T18:54:33.487+02:00  INFO 29913 --- [library-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration edu.yorgo.library.LibraryApplication for test class edu.yorgo.library.web.BorrowingWorkflowIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.070 s -- in edu.yorgo.library.web.BorrowingWorkflowIntegrationTest
+[INFO] Running edu.yorgo.library.service.BookServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.461 s -- in edu.yorgo.library.service.BookServiceTest
+[INFO] Running edu.yorgo.library.service.LoanPolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in edu.yorgo.library.service.LoanPolicyTest
+[INFO] Running edu.yorgo.library.SeedDataIntegrationTest
+2026-11-10T18:54:34.037+02:00  INFO 29913 --- [library-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [edu.yorgo.library.SeedDataIntegrationTest]: SeedDataIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-10T18:54:34.045+02:00  INFO 29913 --- [library-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration edu.yorgo.library.LibraryApplication for test class edu.yorgo.library.SeedDataIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-10T18:54:34.082+02:00  INFO 29913 --- [library-api] [           main] e.yorgo.library.SeedDataIntegrationTest  : Starting SeedDataIntegrationTest using Java 22.0.2 with PID 29913 (started by yorgo in /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab)
+2026-11-10T18:54:34.082+02:00  INFO 29913 --- [library-api] [           main] e.yorgo.library.SeedDataIntegrationTest  : No active profile set, falling back to 1 default profile: "default"
+2026-11-10T18:54:34.258+02:00  INFO 29913 --- [library-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-10T18:54:34.271+02:00  INFO 29913 --- [library-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 4 JPA repository interfaces.
+2026-11-10T18:54:34.354+02:00  INFO 29913 --- [library-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-10T18:54:34.357+02:00  INFO 29913 --- [library-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-10T18:54:34.364+02:00  INFO 29913 --- [library-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-10T18:54:34.365+02:00  INFO 29913 --- [library-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-11-10T18:54:34.366+02:00  INFO 29913 --- [library-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:library user=SA
+2026-11-10T18:54:34.366+02:00  INFO 29913 --- [library-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-11-10T18:54:34.367+02:00  INFO 29913 --- [library-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-10T18:54:34.405+02:00  INFO 29913 --- [library-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-10T18:54:34.418+02:00  INFO 29913 --- [library-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-10T18:54:34.630+02:00  INFO 29913 --- [library-api] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:library'
+2026-11-10T18:54:34.649+02:00  INFO 29913 --- [library-api] [           main] e.yorgo.library.SeedDataIntegrationTest  : Started SeedDataIntegrationTest in 0.6 seconds (process running for 6.409)
+2026-11-10T18:54:34.665+02:00  WARN 29913 --- [library-api] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-10T18:54:34.665+02:00  WARN 29913 --- [library-api] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.642 s -- in edu.yorgo.library.SeedDataIntegrationTest
+[INFO] Running edu.yorgo.library.LibraryApplicationTests
+2026-11-10T18:54:34.682+02:00  INFO 29913 --- [library-api] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [edu.yorgo.library.LibraryApplicationTests]: LibraryApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-10T18:54:34.684+02:00  INFO 29913 --- [library-api] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration edu.yorgo.library.LibraryApplication for test class edu.yorgo.library.LibraryApplicationTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in edu.yorgo.library.LibraryApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ library-api ---
+[INFO] Building jar: /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/target/library-api-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.16:repackage (repackage) @ library-api ---
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] Replacing main artifact /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/target/library-api-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/target/library-api-0.0.1-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- jacoco:0.8.16:report (report) @ library-api ---
+[INFO] Loading execution data file /Users/yorgo/Documents/GitHub/genie-logiciel-reference-lab/reference-lab/target/jacoco.exec
+[INFO] Analyzed bundle 'library-api' with 38 classes
+[INFO] 
+[INFO] --- pmd:3.28.0:pmd (default-cli) @ library-api ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.17.0
+[WARNING] Unable to find a URL to the parent project. The parent menu will NOT be added.
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:spotbugs (default-cli) @ library-api ---
+[INFO] Done SpotBugs Analysis....
+[INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0:spotbugs report goal
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.152 s
+[INFO] Finished at: 2026-11-10T18:54:40+02:00
+[INFO] ------------------------------------------------------------------------

@@ -69,3 +69,5 @@ the exact command.
 - Remaining SpotBugs warnings are not claimed as fixed or suppressed.
 - The JDK 22 test run emitted Mockito's future dynamic-agent warning; it did
   not fail this Java 17-compatible build.
+
+Quality-tooling and correction commit: `9c384f3`.

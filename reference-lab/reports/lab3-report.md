@@ -10,7 +10,7 @@ class exists. The review chose timestamped cancellation, owner-scoped 404
 responses, active-only duplicate prevention, and reservations only for books
 that are currently unavailable.
 
-Implementation and actual verification results will be appended after the
+Implementation and actual verification results were recorded only after the
 specification commit.
 
 Specification commit: `442514a`.

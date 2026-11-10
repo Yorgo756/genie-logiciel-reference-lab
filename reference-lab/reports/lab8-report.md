@@ -29,3 +29,5 @@ increments and outcomes, not duration.
 The retrospective records concrete successes, failures, corrections, remaining
 design risks, and follow-up work. Its examples are traceable to the lab reports
 and terminal evidence rather than reconstructed or invented dialogue.
+
+Estimation and retrospective commit: `98b78e1`.

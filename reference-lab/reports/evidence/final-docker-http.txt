@@ -1,0 +1,13 @@
+books_count=5
+openapi_title_and_paths=["Library Management API",11]
+swagger_status=200
+invalid_book_status=400
+invalid_book_error={"status":400,"error":"Bad Request","path":"/api/books"}
+borrow_status=201 body={"id":1,"dueDate":"2026-11-24","available":false}
+reservation_status=201 body={"id":1,"memberId":2,"bookId":1}
+reservation_list_count=1
+cancel_status=204
+return_status=200
+return_body={"returnedOn":"2026-11-12","available":true}
+second_return_status=409
+second_return_error={"status":409,"error":"Conflict","message":"Borrowing has already been returned"}

@@ -6,8 +6,8 @@ Status: GREEN and regression verified
 
 The sprint backlog defines four user stories and a shared definition of done.
 HTTP integration tests are written before the routes and rules they specify.
-Actual RED/GREEN commands, results, corrections, and commit identifiers will be
-recorded as they occur.
+The following sections preserve the actual RED/GREEN commands, results,
+corrections, and commit identifiers.
 
 ## RED evidence
 
