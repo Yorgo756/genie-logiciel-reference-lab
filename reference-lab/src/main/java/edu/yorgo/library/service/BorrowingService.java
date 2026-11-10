@@ -5,9 +5,7 @@ import edu.yorgo.library.dto.BorrowingRequest;
 import edu.yorgo.library.exception.ConflictException;
 import edu.yorgo.library.exception.ResourceNotFoundException;
 import edu.yorgo.library.repository.BorrowingRepository;
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,14 +16,17 @@ public class BorrowingService {
     private final BorrowingRepository repository;
     private final BookService bookService;
     private final MemberService memberService;
+    private final LoanPolicy loanPolicy;
 
     public BorrowingService(
             BorrowingRepository repository,
             BookService bookService,
-            MemberService memberService) {
+            MemberService memberService,
+            LoanPolicy loanPolicy) {
         this.repository = repository;
         this.bookService = bookService;
         this.memberService = memberService;
+        this.loanPolicy = loanPolicy;
     }
 
     public List<Borrowing> findAll() {
@@ -71,7 +72,7 @@ public class BorrowingService {
         }
 
         book.setAvailable(false);
-        Borrowing borrowing = new Borrowing(book, member, borrowedOn, borrowedOn.plusDays(14));
+        Borrowing borrowing = new Borrowing(book, member, borrowedOn, loanPolicy.dueDateFor(borrowedOn));
         return repository.save(borrowing);
     }
 
@@ -97,11 +98,7 @@ public class BorrowingService {
     public LateFee calculateLateFee(Long borrowingId, LocalDate asOf) {
         Borrowing borrowing = findById(borrowingId);
         LocalDate chargeThrough = borrowing.getReturnedOn() == null ? asOf : borrowing.getReturnedOn();
-        long lateDays = Math.max(0, ChronoUnit.DAYS.between(borrowing.getDueDate(), chargeThrough));
-        BigDecimal amount = BigDecimal.valueOf(lateDays)
-                .multiply(new BigDecimal("0.50"))
-                .setScale(2);
-        return new LateFee(lateDays, amount);
+        return loanPolicy.lateFee(borrowing.getDueDate(), chargeThrough);
     }
 
     private ConflictException conflict(String message) {

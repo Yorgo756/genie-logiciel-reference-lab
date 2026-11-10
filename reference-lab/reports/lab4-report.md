@@ -53,3 +53,5 @@ business behavior. Entity relationships no longer define external JSON. The
 global handler deliberately does not expose database exception details. The H2
 console and Swagger UI remain enabled because this is a reference/development
 application, not a production deployment.
+
+Implementation commit: `77d7781`.
