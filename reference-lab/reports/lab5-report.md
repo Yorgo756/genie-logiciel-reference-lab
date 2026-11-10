@@ -18,3 +18,17 @@ delegates those decisions and remains responsible for persistence and workflow.
 
 Regression command/result: `./mvnw test` - 17 tests, zero failures/errors,
 BUILD SUCCESS.
+
+Commit: `baef2ee`.
+
+## Refactoring 2 - express lifecycle transitions in the domain
+
+Before: `BorrowingService` directly toggled `Book.available` and inspected and
+assigned `Borrowing.returnedOn`, spreading the meaning of a completed loan.
+
+After: `Book.markBorrowed()`, `Book.markReturned()`, `Borrowing.isActive()`, and
+`Borrowing.completeOn()` name and group the state transitions. The service keeps
+validation and transaction orchestration.
+
+Regression command/result: `./mvnw test` - 17 tests, zero failures/errors,
+BUILD SUCCESS.

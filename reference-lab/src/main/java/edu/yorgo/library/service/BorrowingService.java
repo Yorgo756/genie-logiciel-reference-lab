@@ -71,7 +71,7 @@ public class BorrowingService {
             throw conflict("Book already has an active borrowing");
         }
 
-        book.setAvailable(false);
+        book.markBorrowed();
         Borrowing borrowing = new Borrowing(book, member, borrowedOn, loanPolicy.dueDateFor(borrowedOn));
         return repository.save(borrowing);
     }
@@ -79,14 +79,13 @@ public class BorrowingService {
     @Transactional
     public Borrowing returnBook(Long borrowingId, LocalDate returnedOn) {
         Borrowing borrowing = findById(borrowingId);
-        if (borrowing.getReturnedOn() != null) {
+        if (!borrowing.isActive()) {
             throw conflict("Borrowing has already been returned");
         }
         if (returnedOn.isBefore(borrowing.getBorrowedOn())) {
             throw conflict("Return date cannot precede borrowing date");
         }
-        borrowing.setReturnedOn(returnedOn);
-        borrowing.getBook().setAvailable(true);
+        borrowing.completeOn(returnedOn);
         return repository.save(borrowing);
     }
 

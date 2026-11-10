@@ -80,4 +80,12 @@ public class Book {
     public void setAvailable(boolean available) {
         this.available = available;
     }
+
+    public void markBorrowed() {
+        this.available = false;
+    }
+
+    public void markReturned() {
+        this.available = true;
+    }
 }

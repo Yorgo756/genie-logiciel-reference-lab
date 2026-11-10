@@ -87,4 +87,13 @@ public class Borrowing {
     public void setReturnedOn(LocalDate returnedOn) {
         this.returnedOn = returnedOn;
     }
+
+    public boolean isActive() {
+        return returnedOn == null;
+    }
+
+    public void completeOn(LocalDate returnedOn) {
+        this.returnedOn = returnedOn;
+        this.book.markReturned();
+    }
 }
