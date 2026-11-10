@@ -56,3 +56,8 @@ failure was hidden or waived.
 The original Lab 1 generic borrowing POST now delegates to the same 14-day
 business operation so it cannot bypass availability/member checks. DTO cleanup
 and removal of HTTP-specific exceptions from services remain scheduled for Lab 4.
+
+## Commits
+
+- `4f0532e` - RED backlog and failing HTTP tests
+- `801f5bd` - GREEN lending lifecycle and regression evidence
