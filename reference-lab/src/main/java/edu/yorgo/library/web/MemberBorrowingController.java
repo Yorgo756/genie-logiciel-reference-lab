@@ -3,7 +3,6 @@ package edu.yorgo.library.web;
 import edu.yorgo.library.domain.Borrowing;
 import edu.yorgo.library.dto.BorrowBookRequest;
 import edu.yorgo.library.dto.BorrowingResponse;
-import edu.yorgo.library.exception.InvalidRequestException;
 import edu.yorgo.library.mapper.BorrowingMapper;
 import edu.yorgo.library.service.BorrowingService;
 import jakarta.validation.Valid;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -39,12 +37,7 @@ public class MemberBorrowingController {
     }
 
     @GetMapping
-    public List<BorrowingResponse> list(
-            @PathVariable Long memberId,
-            @RequestParam(defaultValue = "true") boolean active) {
-        if (!active) {
-            throw new InvalidRequestException("Only active borrowing lists are supported");
-        }
+    public List<BorrowingResponse> list(@PathVariable Long memberId) {
         return service.findActiveByMember(memberId).stream().map(mapper::toResponse).toList();
     }
 }

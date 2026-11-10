@@ -1,6 +1,6 @@
 # Lab 5 report - incremental refactoring
 
-Status: refactoring 1 in progress
+Status: three refactorings verified
 
 ## Baseline
 
@@ -18,6 +18,25 @@ delegates those decisions and remains responsible for persistence and workflow.
 
 Regression command/result: `./mvnw test` - 17 tests, zero failures/errors,
 BUILD SUCCESS.
+
+Commit: `ddb4f9e`.
+
+## Refactoring 3 - make the active-loan endpoint single-purpose
+
+Before: the member-loan endpoint accepted an `active` boolean but rejected
+`false`; the parameter suggested an unsupported second mode and added a branch.
+
+After: the route is explicitly an active-loan listing and delegates directly to
+`findActiveByMember`. Existing clients that send `active=true` remain compatible
+because Spring ignores the now-unneeded query parameter.
+
+Regression command/result: `./mvnw test` - 17 tests, zero failures/errors,
+BUILD SUCCESS.
+
+## Review conclusion
+
+All three changes were structural and kept the HTTP contracts green. No feature
+work was mixed into the refactoring commits.
 
 Commit: `baef2ee`.
 
