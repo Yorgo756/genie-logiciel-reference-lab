@@ -1,6 +1,6 @@
 # Lab 1 report — scaffold and verify
 
-Status: verified; commit identifier pending at the time of this report update
+Status: verified
 
 ## Objective
 
@@ -84,5 +84,6 @@ date `2026-11-24`. The application was stopped gracefully after verification.
 
 ### Commits
 
-Commit hashes will be appended in a follow-up evidence-only commit so that the
-implementation commit can be referenced without creating a circular hash.
+- `7748938` — `lab1: scaffold library management REST API`
+- The documentation-only commit that records this hash is intentionally not
+  self-referenced, avoiding a circular commit identifier.
