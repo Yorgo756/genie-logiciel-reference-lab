@@ -103,6 +103,26 @@ class BorrowingWorkflowIntegrationTest {
                 .andExpect(jsonPath("$.amount").value(2.00));
     }
 
+    @Test
+    void rejectsInactiveMemberAndReturnBeforeBorrowDate() throws Exception {
+        var member = members.findAll().get(0);
+        member.setActive(false);
+        members.saveAndFlush(member);
+
+        mockMvc.perform(post("/api/members/{memberId}/borrowings", member.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(borrowRequest(books.findAll().get(0).getId(), "2026-11-10")))
+                .andExpect(status().isConflict());
+
+        member.setActive(true);
+        members.saveAndFlush(member);
+        long borrowingId = borrow(member.getId(), books.findAll().get(0).getId(), "2026-11-10");
+        mockMvc.perform(put("/api/borrowings/{id}/return", borrowingId)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"returnedOn\":\"2026-11-09\"}"))
+                .andExpect(status().isConflict());
+    }
+
     private long borrow(long memberId, long bookId, String borrowedOn) throws Exception {
         String response = mockMvc.perform(post("/api/members/{memberId}/borrowings", memberId)
                         .contentType(MediaType.APPLICATION_JSON)
