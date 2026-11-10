@@ -38,6 +38,12 @@ BUILD SUCCESS.
 All three changes were structural and kept the HTTP contracts green. No feature
 work was mixed into the refactoring commits.
 
+## Commits
+
+- `baef2ee` - extract loan policy
+- `ddb4f9e` - encapsulate state transitions
+- `3d1b47e` - simplify active-loan endpoint
+
 Commit: `baef2ee`.
 
 ## Refactoring 2 - express lifecycle transitions in the domain
